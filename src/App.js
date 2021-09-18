@@ -1,11 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import { getCountries } from './api/countryApi';
+import CountrySelector from './components/CountrySelector';
+import Highlight from './components/Highlight';
+import Summary from './components/Summary';
 
 function App() {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    getCountries()
+      .then(res => {
+        console.log({ res });
+        setCountries(res.data);
+      });
+  }, []);
+
   return (
-    <p>
-      ALo
-    </p>
+    <>
+      <CountrySelector countries={countries} />
+      <Highlight />
+      <Summary />
+    </>
   );
 }
 
