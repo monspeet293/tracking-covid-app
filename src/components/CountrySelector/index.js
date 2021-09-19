@@ -4,9 +4,9 @@ import { FormControl, FormHelperText, InputLabel, NativeSelect } from '@material
 export default function CountrySelector({ value, handleOnchange, countries }) {
 
     return (
-        <FormControl>
+        <FormControl >
             <InputLabel htmlFor='country-selector' shrink>
-                Quốc Gia
+                Country
             </InputLabel>
             <NativeSelect
                 value={value}
@@ -23,7 +23,8 @@ export default function CountrySelector({ value, handleOnchange, countries }) {
                     })
                 }
             </NativeSelect>
-            <FormHelperText>Lựa chọn quốc gia</FormHelperText>
+            <FormHelperText>Choose country</FormHelperText>
         </FormControl>
     )
+
 }
